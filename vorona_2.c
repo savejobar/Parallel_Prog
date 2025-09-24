@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <windows.h>
 
 #define N 1000000000  
@@ -43,7 +42,7 @@ DWORD __stdcall f(void* arg)
             {
                 right = mas[idx + 1];
             }
-            if (mas[idx] > left && mas[idx] > mas[idx + 1]) 
+            if (mas[idx] > left && mas[idx] > right) 
             {
                 local_ans++;
             }
@@ -54,7 +53,6 @@ DWORD __stdcall f(void* arg)
 
 int main() 
 {
-    clock_t start = clock();
     int seed = 123, sum;
     srand(seed);
     for (int i = 0; i < N; i++) 
@@ -83,7 +81,4 @@ int main()
         sum += count[i];
     }
     printf("%d\n", sum);
-    clock_t end = clock();
-    double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Time of work: %f seconds\n", seconds);
 }

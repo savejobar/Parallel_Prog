@@ -9,8 +9,8 @@
 unsigned char mas[N];
 int count[M];      
 pthread_t threads[M];
-int thread_args[M];
 int rc;
+int thread_args[M];
 
 typedef struct 
 {

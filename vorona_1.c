@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
 #define N 1000000000
 
 unsigned char mas[N];
 
 int main() 
 {
-    clock_t start = clock();
     int count = 0, seed = 123;
     srand(seed);
     for (int i = 0; i < 1000000000; i++)
@@ -29,9 +28,6 @@ int main()
             count++;
         }
     }
-    clock_t end = clock();
-    double seconds = (double)(end - start) / CLOCKS_PER_SEC;
     printf("%d\n",count);
-    printf("\nThe time of work: %f seconds\n", seconds);
 }
 
